@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_SOCKET=/run/mysqld/mysqld.sock
+    volumes:
+      - /run/mysqld/mysqld.sock:/run/mysqld/mysqld.sock
